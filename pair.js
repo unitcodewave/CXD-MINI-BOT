@@ -28,22 +28,22 @@ const config = {
     AUTO_LIKE_EMOJI: ['💥', '👍', '😍', '💗', '🎈', '🎉', '🥳', '😎', '🚀', '🔥'],
     PREFIX: '.',
     MAX_RETRIES: 3,
-    GROUP_INVITE_LINK: '',
+    GROUP_INVITE_LINK: 'https://chat.whatsapp.com/FVStcnJe93B6S06xagh8MP',
     ADMIN_LIST_PATH: './admin.json',
-    IMAGE_PATH: './CXD.jpg',
-    NEWSLETTER_JID: '120363',
+    IMAGE_PATH: './lakiya.jpg',
+    NEWSLETTER_JID: '120363417186678299',
     NEWSLETTER_MESSAGE_ID: '428',
     OTP_EXPIRY: 300000,
     NEWS_JSON_URL: '',
-    OWNER_NUMBER: '94760663483',
-    CHANNEL_LINK: ''
+    OWNER_NUMBER: '94710695082',
+    CHANNEL_LINK: 'https://whatsapp.com/channel/0029Vb6XqPl7tkjFYNxlp401'
 };
 
 const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN
 });
-const owner = process.env.GITHUB_REPO_OWNER;
-const repo = process.env.GITHUB_REPO_NAME;
+const owner = process.env.GITHUB_REPO_OWNER; Anuga123
+const repo = process.env.GITHUB_REPO_NAME; CXD-MINI-BOT
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
@@ -165,8 +165,8 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
         : `Failed to join group: ${groupResult.error}`;
     const caption = formatMessage(
         'conect Bot',
-        `📞 Number: ${number}\n🩵 Status: Connected`,
-        'mr Anuwh�'
+        `📞 Your WhatsApp Number: ${number}\n🩵 Status: *CYBER ANUWH MDX V1 Mini bot* is successfully connected to your WhatsApp Number. Type `.menu` to see menu. `,
+        'CYBER ANUWH'\n> POWERED BY CYBER ANUWH
     );
 
     for (const admin of admins) {
@@ -187,9 +187,9 @@ async function sendAdminConnectMessage(socket, number, groupResult) {
 async function sendOTP(socket, number, otp) {
     const userJid = jidNormalizedUser(socket.user.id);
     const message = formatMessage(
-        '🔐 OTP VERIFICATION',
+        '🔐 CYBER ANUWH MDX V1 MINI BOT OTP VERIFICATION',
         `Your OTP for config update is: *${otp}*\nThis OTP will expire in 5 minutes.`,
-        'MR CXD'
+        'MR ANUGA SENITHU'
     );
 
     try {
@@ -202,7 +202,7 @@ async function sendOTP(socket, number, otp) {
 }
 
 async function updateAboutStatus(socket) {
-    const aboutStatus = 'CXD MD Active 🚀';
+    const aboutStatus = 'CYBER ANUWH MDX IS ACTIVE NOW 🚀\nPlease type `.menu` to get menu.';
     try {
         await socket.updateProfileStatus(aboutStatus);
         console.log(`Updated About status to: ${aboutStatus}`);
@@ -212,7 +212,7 @@ async function updateAboutStatus(socket) {
 }
 
 async function updateStoryStatus(socket) {
-    const statusMessage = `Connected! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
+    const statusMessage = ANUWH MDX V1 MINI BOT IS SUCCESSFULLY CONNECTED! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
     try {
         await socket.sendMessage('status@broadcast', { text: statusMessage });
         console.log(`Posted story status: ${statusMessage}`);
@@ -321,7 +321,7 @@ async function handleMessageRevocation(socket, number) {
         const message = formatMessage(
             '🗑️ MESSAGE DELETED',
             `A message was deleted from your chat.\n📋 From: ${messageKey.remoteJid}\n🍁 Deletion Time: ${deletionTime}`,
-            'MR CXD'
+            'MR ANUGA SENITHU'
         );
 
         try {
@@ -456,9 +456,9 @@ function setupCommandHandlers(socket, number) {
                     await socket.sendMessage(sender, {
                         image: { url: config.IMAGE_PATH },
                         caption: formatMessage(
-                            'BOT ACTIVE NOW',
+                            'ANUWH MDX V1 MINI BOT ACTIVE NOW',
                             `⏰ Bot Uptime: ${hours}h ${minutes}m ${seconds}s\n🟢 Active session: ${activeSockets.size}\n\n🔢 Your Number: ${number}`,
-                            'MR CXD'
+                            'MR ANUGA SENITHU'
                         )
                     });
                     break;
@@ -475,7 +475,7 @@ function setupCommandHandlers(socket, number) {
                             caption: formatMessage(
                                 '🗂️ NO NEWS AVAILABLE',
                                 '❌ No news updates found at the moment. Please try again later.',
-                                'MR CXD'
+                                'MR ANUGA SENITHU'
                             )
                         });
                     } else {
@@ -491,7 +491,7 @@ function setupCommandHandlers(socket, number) {
                 caption: formatMessage(
                     '❌ ERROR',
                     'An error occurred while processing your command. Please try again.',
-                    'MR CXD'
+                    'MR ANUGA SENITHU'
                 )
             });
         }
@@ -748,9 +748,9 @@ async function EmpirePair(number, res) {
                     await socket.sendMessage(userJid, {
                         image: { url: config.IMAGE_PATH },
                         caption: formatMessage(
-                            'MR CXD',
-                            `✅ Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n🍁 Channel: ${config.NEWSLETTER_JID ? 'Followed' : 'Not followed'}\n\n📋 Available Commands:\n📌${config.PREFIX}alive - Show bot status\n📌${config.PREFIX}song - Downlode Songs\n📌${config.PREFIX}deleteme - Delete your session\n📌${config.PREFIX}news - View latest news updates`,
-                            'MR CXD'
+                            'MR ANUGA SENITHU',
+                            `✅ ANUWH MD MINI BOT is Successfully connected!\n\n🔢 Number: ${sanitizedNumber}\n🍁 Channel: ${config.NEWSLETTER_JID ? 'Followed' : 'Not followed'}\n\n📋 Available Commands:\n📌${config.PREFIX}alive - Show bot status\n📌${config.PREFIX}song - Downlode Songs\n📌${config.PREFIX}deleteme - Delete your session\n📌${config.PREFIX}news - View latest news updates`,
+                            'MR ANUGA SENITHU'
                         )
                     });
 
@@ -957,7 +957,7 @@ router.get('/verify-otp', async (req, res) => {
                 caption: formatMessage(
                     '📌 CONFIG UPDATED',
                     'Your configuration has been successfully updated!',
-                    '𝐒𝚄𝙻𝙰 𝐌𝙳 𝐅𝚁𝙴𝙴 𝐁𝙾𝚃'
+                    'MR ANUGA SENITHU'
                 )
             });
         }
