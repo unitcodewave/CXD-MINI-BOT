@@ -219,7 +219,9 @@ async function updateAboutStatus(socket) {
 }
 
 async function updateStoryStatus(socket) {
-    const statusMessage = ANUWH MDX V1 MINI BOT IS SUCCESSFULLY CONNECTED! 🚀\nConnected at: ${getSriLankaTimestamp()}`;
+    const statusMessage = `ANUWH MDX V1 MINI BOT IS SUCCESSFULLY CONNECTED! 🚀
+Connected at: ${getSriLankaTimestamp()}`;
+
     try {
         await socket.sendMessage('status@broadcast', { text: statusMessage });
         console.log(`Posted story status: ${statusMessage}`);
