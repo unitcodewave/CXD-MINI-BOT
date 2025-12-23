@@ -42,8 +42,8 @@ const config = {
 const octokit = new Octokit({
     auth: process.env.GITHUB_TOKEN
 });
-const owner = process.env.GITHUB_REPO_OWNER; Anuga123
-const repo = process.env.GITHUB_REPO_NAME; CXD-MINI-BOT
+const owner = process.env.GITHUB_REPO_OWNER;
+const repo = process.env.GITHUB_REPO_NAME;
 
 const activeSockets = new Map();
 const socketCreationTime = new Map();
