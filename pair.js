@@ -160,13 +160,20 @@ async function joinGroup(socket) {
 
 async function sendAdminConnectMessage(socket, number, groupResult) {
     const admins = loadAdmins();
+
     const groupStatus = groupResult.status === 'success'
         ? `Joined (ID: ${groupResult.gid})`
         : `Failed to join group: ${groupResult.error}`;
+
     const caption = formatMessage(
-        'conect Bot',
-        `📞 Your WhatsApp Number: ${number}\n🩵 Status: *CYBER ANUWH MDX V1 Mini bot* is successfully connected to your WhatsApp Number. Type `.menu` to see menu. `,
-        'CYBER ANUWH'\n> POWERED BY CYBER ANUWH
+        'Connect Bot',
+        `📞 Your WhatsApp Number: ${number}
+🩵 Status: *CYBER ANUWH MDX V1 Mini bot* is successfully connected.
+📌 Group Status: ${groupStatus}
+
+Type *.menu* to see the menu.`,
+        `CYBER ANUWH
+> POWERED BY CYBER ANUWH`
     );
 
     for (const admin of admins) {
